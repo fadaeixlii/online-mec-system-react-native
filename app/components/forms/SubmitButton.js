@@ -4,7 +4,10 @@ import CustomButton from "../shared/CustomButton";
 
 const SubmitButton = ({ title }) => {
     const { handleSubmit } = useFormikContext();
-    return <CustomButton title={title} onPress={handleSubmit} />;
+    return <CustomButton title = { title }
+    color = "#ff9999"
+    onPress = { handleSubmit }
+    />;
 };
 
 export default SubmitButton;

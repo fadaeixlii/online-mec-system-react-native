@@ -15,16 +15,17 @@ const WelcomeScreen = ({ navigation }) => {
                     style={styles.logo}
                 />
                 <Text style={styles.firstText}>
-                    خودآموزی ، کسب تجربه ، ورود به بازار کار
+                    کمک سریع , راحت و مطمین با همراه مکانیک
                 </Text>
             </View>
             <View style={styles.buttonContainer}>
                 <CustomButton
                     title="ورود"
-                    color="royalblue"
+                    color="#ff9999"
                     onPress={() => navigation.navigate("Login")}
                 />
                 <CustomButton
+                    color="#6b7db3"
                     title="ثبت نام"
                     onPress={() => navigation.navigate("Register")}
                 />
@@ -47,9 +48,9 @@ const styles = StyleSheet.create({
     },
     firstText: {
         fontFamily: "ih",
-        fontSize: 25,
+        fontSize: 20,
         top: 25,
-        color: "tomato",
+        color: "#fff",
     },
     logo: {
         width: 260,

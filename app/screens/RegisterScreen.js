@@ -36,7 +36,7 @@ const RegisterScreen = () => {
                 validationSchema={validationSchema}
             >
                 <ToplearnFormField
-                    placeholder="نام و نام خانوادگی"
+                    placeholder="نام کاربری"
                     autoCorrect={false}
                     icon="account-circle"
                     name="fullname"
@@ -80,6 +80,7 @@ export default RegisterScreen;
 const styles = StyleSheet.create({
     container: {
         alignItems: "center",
+        
     },
     logo: {
         width: 270,
