@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "react-native";
-import Screen from "./../components/shared/Screen";
+import Screen from "../components/shared/Screen";
 
 const MyCoursesScreen = () => {
     return (

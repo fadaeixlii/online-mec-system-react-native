@@ -2,7 +2,8 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AccountScreen, MyCoursesScreen } from "../screens";
-import Map from './../screens/CoursesScreen';
+import Map from '../screens/CoursesScreen';
+import SelectMap from './../screens/SelectMap';
 
 const Tab = createBottomTabNavigator();
 
@@ -54,7 +55,7 @@ const TabsNavigator = () => {
                 name="Courses"
                 component={Map}
                 options={{
-                    tabBarLabel: "دوره ها",
+                    tabBarLabel: "",
                 }}
             />
             <Tab.Screen

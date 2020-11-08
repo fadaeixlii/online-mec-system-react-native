@@ -8,7 +8,7 @@ import {
     TouchableHighlight,
 } from "react-native";
 import Icon from "../components/shared/Icon";
-import Screen from "./../components/shared/Screen";
+import Screen from "../components/shared/Screen";
 
 const AccountScreen = () => {
     return (
