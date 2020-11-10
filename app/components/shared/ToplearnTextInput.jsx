@@ -2,10 +2,13 @@ import React from "react";
 import { View, StyleSheet, TextInput } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import {  Item, Input, Label } from 'native-base';
+
 const ToplearnTextInput = ({ icon, ...otherProps }) => {
     return (
         <View style={styles.container}>
             <TextInput style={styles.text} {...otherProps} />
+   
             {icon && (
                 <MaterialCommunityIcons
                     name={icon}

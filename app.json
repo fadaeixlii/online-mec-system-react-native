@@ -1,24 +1,27 @@
 {
-    "expo": {
-        "name": "toplearn",
-        "slug": "toplearn",
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "icon": "./app/assets/icon.png",
-        "splash": {
-            "image": "./app/assets/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
-        },
-        "updates": {
-            "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": ["**/*"],
-        "ios": {
-            "supportsTablet": true
-        },
-        "web": {
-            "favicon": "./app/assets/favicon.png"
-        }
-    }
+  "expo": {
+    "name": "onlineMec",
+    "slug": "onlinemec",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/icon.png",
+    "splash": {
+      "image": "./app/assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4b647d"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./app/assets/favicon.png"
+    },
+    "description": ""
+  }
 }

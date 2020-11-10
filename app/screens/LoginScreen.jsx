@@ -9,9 +9,8 @@ import {
 } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
-    email: Yup.string()
-        .required("این فیلد الزامی می باشد")
-        .email("ایمیل معتبر نمی باشد"),
+    phoneNumber: Yup.string()
+        .required("این فیلد الزامی می باشد"),
     password: Yup.string()
         .required("این فیلد الزامی می باشد")
         .min(4, "کلمه عبور نباید کمتر از 4 کاراکتر باشد"),
@@ -22,17 +21,16 @@ const LoginScreen = ({ navigation }) => {
         <Screen style={styles.container}>
             <Image style={styles.logo} source={require("../assets/logo.png")} />
             <ToplearnForm
-                initialValues={{ email: "", password: "" }}
+                initialValues={{ phoneNumber: "", password: "" }}
                 onSubmit={() => navigation.navigate("Home")}
                 // validationSchema={validationSchema}
             >
                 <ToplearnFormField
-                    placeholder="ایمیل کاربری"
-                    autoCompleteType="email"
+                    placeholder="شماره تلفن"
                     autoCorrect={false}
-                    keyboardType="email-address"
-                    icon="email"
-                    name="email"
+                    keyboardType="numeric"
+                    icon="phone"
+                    name="phoneNumber"
                     placeholderTextColor="royalblue"
                 />
                 <ToplearnFormField
