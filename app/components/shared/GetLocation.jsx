@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   myloc: {
     position: "absolute",
-    top: 290,
+    top: 390,
     left: 20,
     zIndex: 3,
   },

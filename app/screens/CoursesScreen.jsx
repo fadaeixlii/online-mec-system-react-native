@@ -1,80 +1,50 @@
 import React from "react";
 
-import { StyleSheet, Text, View, Dimensions, Platform } from "react-native";
+import { StyleSheet } from "react-native";
 
-import Screen from './../components/shared/Screen';
-import GetLatLon from './../components/shared/GetLocation';
+import Screen from "./../components/shared/Screen";
+import GetLatLon from "./../components/shared/GetLocation";
+import { View } from "native-base";
+import CustomBUtton2 from "../components/shared/CustomBUtton2";
 
 const Map = () => {
-  // const [location, setLocation] = useState({
-  // coords:
-  //   {
-  //     latitude: 37.78825,
-  //     longitude: -122.4324,
-  //     latitudeDelta: 0.0922,
-  //     longitudeDelta: 0.0421,
-  //   }
-  
-  // });
-  // const [errorMsg, setErrorMsg] = useState(null);
-
-  // useEffect(() => {
-  //   if (Platform.OS === "android" && !Constants.isDevice) {
-  //     console.log("error");
-  //     setErrorMsg(
-  //       "Oops, this will not work on Sketch in an Android emulator. Try it on your device!"
-  //     );
-  //   } else {
-  //     (async () => {
-  //       let { status } = await Location.requestPermissionsAsync();
-  //       if (status !== "granted") {
-  //         setErrorMsg("Permission to access location was denied");
-  //         console.log("errorr2");
-  //       }
-
-  //       let locatio = await Location.getCurrentPositionAsync({});
-  //       setLocation(locatio);
-  //       console.log(location);
-  //     })();
-  //   }
-  // },[]);
-
-  // let text = "Waiting..";
-  // if (errorMsg) {
-  //   text = errorMsg;
-  // } else if (location) {
-  //   text = JSON.stringify(location);
-  // }
-  // const onRegionChange=(region)=> {
-  //   this.setState({ region });
-  // }
   return (
     <Screen>
-
-      
-      <GetLatLon/>
+      <View style={styles.main}>
+        <GetLatLon />
+        <View style={styles.container}>
+          <CustomBUtton2
+            backgroundColor="#ff9999"
+            color="black"
+            title="درخواست مکانیک با آدرس"
+            subtitle="(هزینه ۱۰,۰۰۰)"
+            subtitle2="با وارد کردن آدرس"
+            handlePress={()=>{}}
+          />
+           <CustomBUtton2
+            backgroundColor="#ff9999"
+            color="black"
+            title="درخواست مکانیک با GPS"
+            subtitle="(هزینه ۱۰,۰۰۰) تومان"
+            subtitle2="نیاز به اینترنت"
+            handlePress={()=>{}}
+          />
+        </View>
+      </View>
     </Screen>
-
-      // {/*<MapView
-      //   initialRegion={{
-      //     latitude: location.coords.latitude,
-      //     longitude: location.coords.longitude,
-      //     latitudeDelta: 0.0922,
-      //     longitudeDelta: 0.0421,
-      //   }}
-      //   onRegionChange={onRegionChange}
-      //   mapStyle={styles.mapStyle}
-      // />*/}
-  
   );
 };
 
 export default Map;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  main:{
+    flex:1,
+    height:"100%",
     backgroundColor: "#fff",
+  },
+  container: {
+    flex:1,
     alignItems: "center",
     justifyContent: "center",
   },

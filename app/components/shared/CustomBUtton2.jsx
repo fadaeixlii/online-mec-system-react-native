@@ -8,13 +8,17 @@ const CustomBUtton2 = ({
   title,
   subtitle,
   color,
+  subtitle2,
+  handlePress,
 }) => {
   return (
     <TouchableOpacity
-      style={[styles.container, { backgroundColor, width, height }]}
+      style={[styles.container, { backgroundColor, width, height }]} onPress={handlePress}
     >
       <Text style={[styles.text, { color }]}>{title}</Text>
-      <Text style={[styles.suntext, { color }]}>{subtitle}</Text>
+      {subtitle ? <Text style={[styles.suntext, { color }]}>{subtitle}</Text> : null}
+      {subtitle2 ? <Text style={[styles.suntext, { color ,marginBottom:0}]}>{subtitle2}</Text> : null}
+      
     </TouchableOpacity>
   );
 };
@@ -26,11 +30,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#4b647d",
     width: 50,
     padding: 20,
-    marginHorizontal: 20,
+    margin: 5,
     shadowColor: "#000",
     shadowOffset: {
-      width: 0,
-      height: 2,
+      width: 4,
+      height: 6,
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "ih",
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: "bold",
     marginBottom: 5,
     color: "#fff",
@@ -53,5 +57,6 @@ const styles = StyleSheet.create({
     fontFamily: "ih",
     color: "#fff",
     fontSize: 10,
+    marginBottom:3,
   },
 });

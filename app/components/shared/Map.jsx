@@ -48,7 +48,7 @@ export default CustomMap;
 const styles = StyleSheet.create({
   map: {
     width: "100%",
-    height: 350,
+    height: 450,
     borderRadius: 50,
     shadowColor: "#000",
     shadowOffset: {
