@@ -4,13 +4,21 @@ import { TouchableOpacity } from "react-native";
 import Icon from "./../shared/Icon";
 import { Image } from "react-native";
 
-const Profile = () => {
+const Profile = ({
+  setEnableEdit,
+  enableEdit,
+  enableAddCash,
+  setenableAddCash,
+}) => {
   return (
     <View style={styles.container}>
       <View>
         <Image style={styles.image} source={require("../../assets/uns.jpg")} />
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={() => {
+            setEnableEdit(!enableEdit);
+            setenableAddCash(false);
+          }}
           style={{
             //   marginLeft: 20,
             marginTop: 20,
@@ -30,7 +38,13 @@ const Profile = () => {
           <View style={styles.cash}>
             <Text style={styles.money}>100000000000</Text>
             <Icon name="currency-rial" backgroundColor="green" />
-            <TouchableOpacity style={{marginLeft:5}} onPress={() => {}}>
+            <TouchableOpacity
+              style={{ marginLeft: 5 }}
+              onPress={() => {
+                setenableAddCash(!enableAddCash);
+                setEnableEdit(false);
+              }}
+            >
               <Icon name="cash-refund" backgroundColor="#6b7db3" />
             </TouchableOpacity>
           </View>
@@ -44,7 +58,7 @@ export default Profile;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor:"#e5f2ff",
+    backgroundColor: "#e5f2ff",
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
@@ -58,8 +72,8 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
 
     elevation: 4,
-    padding:10,
-    borderRadius:15,
+    padding: 10,
+    borderRadius: 15,
   },
   image: {
     width: 100,

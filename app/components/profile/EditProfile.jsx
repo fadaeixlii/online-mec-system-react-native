@@ -1,130 +1,43 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import Icon from "../shared/Icon";
-import ToplearnFormField from "./../forms/ToplearnFormField";
-import { SubmitButton } from "./../forms";
-import * as Yup from "yup";
-import { Formik } from "formik";
+import { StyleSheet, View } from "react-native";
 
-
-const validationSchema = Yup.object().shape({
-  phoneNumber: Yup.string().required("این فیلد الزامی می باشد"),
-  password: Yup.string()
-    .required("این فیلد الزامی می باشد")
-    .min(4, "کلمه عبور نباید کمتر از 4 کاراکتر باشد"),
-});
+import OnlineMecFormEdit from "../forms/onlineMecFormEdit";
 
 const EditProfile = () => {
-  // const { handleSubmit } = useFormikContext();
-
   return (
-    <React.Fragment>
-      <View style={styles.container}>
-        <Formik
-          initialValues={{phoneNumber:""}}
-          onSubmit={()=>{}}
-          // validationSchema={validationSchema}
-        >
-          {({ handleSubmit }) => (
-            <>
-              <ToplearnFormField
-                placeholder="تعویض شماره تلفن"
-                autoCorrect={false}
-                keyboardType="numeric"
-                icon="phone"
-                name="phoneNumber"
-                placeholderTextColor="#6b7db3"
-              />
-              <TouchableOpacity onPress={handleSubmit}>
-                <Icon name="arrow" backgroundColor="#6b7db3" />
-              </TouchableOpacity>
-            </>
-          )}
-        </Formik>
-      </View>
+    <View style={styles.content}>
+      <OnlineMecFormEdit
+        handleSubmit={() => {
+          //handle change password
+        }}
+        iconName="onepassword"
+        placeholder="کلمه عبور جدید"
+      />
 
-      <View style={styles.content}>
-        <Formik
-          initialValues={{password1:"",password2:""}}
-          onSubmit={()=>{}}
-          // validationSchema={validationSchema}
-        >
-          {({ handleSubmit }) => (
-            <>
-              <Text>تعویض کلمه عبور</Text>
-              <ToplearnFormField
-                placeholder="کلمه عبور"
-                autoCompleteType="password"
-                autoCorrect={false}
-                icon="onepassword"
-                name="password1"
-                placeholderTextColor="royalblue"
-                secureTextEntry
-              />
-              <ToplearnFormField
-                placeholder="کلمه  عبور جدید"
-                autoCompleteType="password"
-                autoCorrect={false}
-                icon="onepassword"
-                name="password2"
-                placeholderTextColor="royalblue"
-                secureTextEntry
-              />
-              <View style={{ width: "60%" }}>
-                <SubmitButton title="تعویض کلمه عبور" />
-              </View>
-            </>
-          )}
-        </Formik>
-      </View>
+      <OnlineMecFormEdit
+        handleSubmit={() => {
+          //handle change email
+        }}
+        placeholder="ایمیل جدید"
+        iconName="email"
+      />
 
-      <View style={styles.container}>
-        <Formik
-          initialValues={{phoneNumber:''}}
-          onSubmit={()=>{}}
-          // validationSchema={validationSchema}
-        >
-          {({ handleSubmit }) => (
-            <>
-              <ToplearnFormField
-                placeholder="تعویض مدل ماشین"
-                autoCorrect={false}
-                icon="car"
-                name="phoneNumber"
-                placeholderTextColor="#6b7db3"
-              />
-              <TouchableOpacity onPress={handleSubmit}>
-                <Icon name="arrow" backgroundColor="#6b7db3" />
-              </TouchableOpacity>
-            </>
-          )}
-        </Formik>
-      </View>
+      <OnlineMecFormEdit
+        handleSubmit={() => {
+          //handle change car
+        }}
+        iconName="car"
+        placeholder="مدل ماشین جدید"
+      />
 
-      <View style={styles.container}>
-        <Formik
-          initialValues={{changeEmail:''}}
-          onSubmit={()=>{}}
-          // validationSchema={validationSchema}
-        >
-          {({ handleSubmit }) => (
-            <>
-              {" "}
-              <ToplearnFormField
-                placeholder="تعویض ایمیل"
-                autoCorrect={false}
-                icon="email"
-                name="changeEmail"
-                placeholderTextColor="#6b7db3"
-              />
-              <TouchableOpacity onPress={handleSubmit}>
-                <Icon name="arrow" backgroundColor="#6b7db3" />
-              </TouchableOpacity>
-            </>
-          )}
-        </Formik>
-      </View>
-    </React.Fragment>
+<OnlineMecFormEdit
+        handleSubmit={()=>{
+          //handle change phone
+        }}
+        iconName="phone"
+        placeholder="شماره تلفن جدیدس"
+      />
+    </View>
   );
 };
 
@@ -138,5 +51,19 @@ const styles = StyleSheet.create({
   content: {
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor:"#e5f2ff",
+    width: "100%",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+
+    elevation: 4,
+    borderRadius:15,
+    marginTop:20,
+    padding:20
   },
 });
