@@ -14,19 +14,31 @@ const Profile = ({
     <View style={styles.container}>
       <View>
         <Image style={styles.image} source={require("../../assets/uns.jpg")} />
-        <TouchableOpacity
-          onPress={() => {
-            setEnableEdit(!enableEdit);
-            setenableAddCash(false);
-          }}
-          style={{
-            //   marginLeft: 20,
-            marginTop: 20,
-            alignSelf: "center",
-          }}
-        >
-          <Icon name="settings" backgroundColor="tomato" />
-        </TouchableOpacity>
+        <View style={styles.iconsContainer}>
+          <TouchableOpacity
+            onPress={() => {
+              setEnableEdit(!enableEdit);
+              setenableAddCash(false);
+            }}
+            style={{
+              //   marginLeft: 20,
+              marginTop: 20,
+              alignSelf: "center",
+            }}
+          >
+            <Icon name="settings" backgroundColor="tomato" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {}}
+            style={{
+              //   marginLeft: 20,
+              marginTop: 20,
+              alignSelf: "center",
+            }}
+          >
+            <Icon name="logout" backgroundColor="tomato" />
+          </TouchableOpacity>
+        </View>
       </View>
 
       <View style={styles.details}>
@@ -84,6 +96,7 @@ const styles = StyleSheet.create({
     width: "70%",
     marginLeft: 10,
     justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontFamily: "ih",
@@ -112,4 +125,8 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     marginRight: 10,
   },
+  iconsContainer:{
+    flexDirection:"row",
+    justifyContent:"space-between"
+  }
 });

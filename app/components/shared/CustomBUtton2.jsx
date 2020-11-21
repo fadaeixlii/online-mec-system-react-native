@@ -28,9 +28,9 @@ export default CustomBUtton2;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#4b647d",
-    width: 50,
+    width: 40,
     padding: 20,
-    margin: 5,
+    margin: 10,
     shadowColor: "#000",
     shadowOffset: {
       width: 4,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "ih",
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: "bold",
     marginBottom: 5,
     color: "#fff",

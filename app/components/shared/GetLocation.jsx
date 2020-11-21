@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import {
   Platform,
   View,
+  Text,
   StyleSheet,
   TouchableOpacity,
+  ActivityIndicator
 } from "react-native";
 import Constants from "expo-constants";
 import * as Location from "expo-location";
@@ -63,7 +65,11 @@ export default function GetLatLon() {
             <Icon name="crosshairs-gps" backgroundColor="#4b647d" />
           </TouchableOpacity>
         </>
-      ) : null}
+      ) : (
+        <View style={styles.map}>
+          <ActivityIndicator size="large" />
+        </View>
+      )}
     </>
   );
 }
@@ -86,5 +92,21 @@ const styles = StyleSheet.create({
     top: 390,
     left: 20,
     zIndex: 3,
+  },
+  map: {
+    width: "100%",
+    height: 450,
+    borderRadius: 50,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+
+    elevation: 4,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
